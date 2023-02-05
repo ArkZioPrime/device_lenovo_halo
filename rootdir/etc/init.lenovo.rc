@@ -1,0 +1,129 @@
+# Lenovo init rc file load
+import /vendor/etc/init/hw/init.aplog.rc
+import /vendor/etc/init/hw/init.lenovo.kptr.rc
+
+on post-fs
+    #goodix
+    chown system system /dev/goodix_fp
+    chmod 666 /dev/goodix_fp
+    mkdir /mnt/vendor/persist/fpdata 0775 system system
+    chmod 775 /mnt/vendor/persist/fpdata/
+    chmod 666 /mnt/vendor/persist/fpdata/BMatrix.so
+    chmod 666 /mnt/vendor/persist/fpdata/caliParamsInfo.so
+    chmod 666 /mnt/vendor/persist/fpdata/cali_data.so
+    chmod 666 /mnt/vendor/persist/fpdata/chartbase.so
+    restorecon_recursive  /mnt/vendor/persist/fpdata
+    chown system system /sys/class/dsi_hbm/hbm/enable
+    chown system system /sys/class/backlight/panel0-hbm/brightness
+    chmod 666 /sys/class/backlight/panel0-hbm/brightness
+    chmod 666 /sys/class/backlight/panel0-backlight/brightness
+
+    # Thermal
+    chown system system /sys/class/hwmon/hwmon0/fan0_duty
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_duty
+    chown system system /sys/class/hwmon/hwmon0/fan0_enable
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_enable
+    chown system system /sys/class/hwmon/hwmon0/fan0_fg
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_fg
+    chown system system /sys/class/hwmon/hwmon0/fan1_duty
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_duty
+    chown system system /sys/class/hwmon/hwmon0/fan1_enable
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_enable
+    chown system system /sys/class/hwmon/hwmon0/fan1_fg
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_fg
+    chown system system /sys/class/hwmon/hwmon0/fan1_fr
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_fr
+    chown system system /sys/class/hwmon/hwmon0/fan0_level1
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_level1
+    chown system system /sys/class/hwmon/hwmon0/fan0_level2
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_level2
+    chown system system /sys/class/hwmon/hwmon0/fan0_level3
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_level3
+    chown system system /sys/class/hwmon/hwmon0/fan0_level4
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_level4
+    chown system system /sys/class/hwmon/hwmon0/fan0_level5
+    chmod 666 /sys/class/hwmon/hwmon0/fan0_level5
+    chown system system /sys/class/hwmon/hwmon0/fan1_level1
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_level1
+    chown system system /sys/class/hwmon/hwmon0/fan1_level2
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_level2
+    chown system system /sys/class/hwmon/hwmon0/fan1_level3
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_level3
+    chown system system /sys/class/hwmon/hwmon0/fan1_level4
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_level4
+    chown system system /sys/class/hwmon/hwmon0/fan1_level5
+    chmod 666 /sys/class/hwmon/hwmon0/fan1_level5
+    chown system system /sys/class/hwmon/hwmon0/fan_level
+    chmod 666 /sys/class/hwmon/hwmon0/fan_level
+    chown system system /sys/class/hwmon/hwmon0/user_enable
+    chmod 666 /sys/class/hwmon/hwmon0/user_enable
+    chown system system /sys/class/hwmon/hwmon0/thermal_fan
+    chmod 666 /sys/class/hwmon/hwmon0/thermal_fan
+
+    chown system system /sys/class/hwmon/hwmon1/display_rate
+    chmod 666 /sys/class/hwmon/hwmon1/display_rate
+    chown system /sys/class/hwmon/hwmon1/speaker
+    chmod 666 /sys/class/hwmon/hwmon1/speaker
+    chown system system /sys/class/hwmon/hwmon1/modem_5g
+    chmod 666 /sys/class/hwmon/hwmon1/modem_5g
+    chown system system /sys/class/hwmon/hwmon1/camera
+    chmod 666 /sys/class/hwmon/hwmon1/camera
+
+    chown system system /sys/devices/system/cpu/cpu0/rq-stats/mpctl
+    chmod 666 /sys/devices/system/cpu/cpu0/rq-stats/mpctl
+    chown system system /sys/devices/system/cpu/cpu0/rq-stats/mpctl2
+    chmod 666 /sys/devices/system/cpu/cpu0/rq-stats/mpctl2
+
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/clk_enable
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/compatible_all
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/device_prepare
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/driver_override
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/handle_wakelock
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/hw_reset
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/irq
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/uevent
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/modalias
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/pinctl_set
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/regulator_enable
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
+    chmod 666 /sys/devices/platform/soc/soc:fpc1020/offlock_enable
+
+    # CPU scheduler
+    chown system system /sys/devices/system/cpu/cpu0/rq-stats/schctl
+    chmod 666 /sys/devices/system/cpu/cpu0/rq-stats/schctl
+    chown system system /sys/devices/system/cpu/cpu4/online
+    chmod 666 /sys/devices/system/cpu/cpu4/online
+    chown system system /sys/devices/system/cpu/cpu5/online
+    chmod 666 /sys/devices/system/cpu/cpu5/online
+    chown system system /sys/devices/system/cpu/cpu6/online
+    chmod 666 /sys/devices/system/cpu/cpu6/online
+    chown system system /sys/devices/system/cpu/cpu7/online
+    chmod 666 /sys/devices/system/cpu/cpu7/online
+
+    # Charger check
+    chown system system /sys/class/power_supply/battery/current_now
+    chmod 666 /sys/class/power_supply/battery/current_now
+    chown system system /sys/class/power_supply/usb/voltage_now
+    chmod 666 /sys/class/power_supply/usb/voltage_now
+
+on property:sys.boot_completed=1
+    # Battery
+    chown system system /sys/class/qcom-battery/batt_charge_health_en
+    chmod 666 /sys/class/qcom-battery/batt_charge_health_en
+    chown system system /sys/class/qcom-battery/batt_charge_accelerate_en
+    chmod 666 /sys/class/qcom-battery/batt_charge_accelerate_en
+    chown system system /sys/class/qcom-battery/batt_charge_bypass_en
+    chmod 666 /sys/class/qcom-battery/batt_charge_bypass_en
+
+on post-fs-data
+    mkdir /data/vendor/goodix 0775 system system
+
+# factory test service
+service factest /vendor/bin/factest
+    class main
+    user root
+    group root system vendor_qti_diag sdcard_rw cache drmrpc
+
+# Factory reset
+on property:vendor.wipe_data=1
+    factory_data_misc

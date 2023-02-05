@@ -1,0 +1,132 @@
+# common config for all projects.
+
+
+on post-fs
+    chown system system /sys/class/dsi_hbm/hbm/enable
+    chown system system /sys/class/backlight/panel0-hbm/brightness
+    chmod 666 /sys/class/backlight/panel0-hbm/brightness
+    chmod 666 /sys/class/backlight/panel0-backlight/brightness
+    chown system system /sys/class/leds/aw22xxx_led/aw_brightness
+    chown system system /sys/class/leds/aw22xxx_led/fan_brightness
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/double_duration
+    chown system system /sys/class/leds/vibrator/state
+    chown system system /sys/class/leds/vibrator/cali_lra
+    chown system system /sys/class/leds/vibrator/cali
+    chown system system /sys/class/leds/vibrator/dual_cancel
+    chown system system /sys/class/leds/vibrator/trig
+    chown system system /sys/class/leds/vibrator_aw8697x/cali
+    chown system system /sys/class/leds/vibrator_aw8697x/cali_lra
+    chown system system /sys/class/leds/vibrator_aw8697x/trig
+    chown system system /sys/class/panel/cellid/read_id
+    chmod 0666 /mnt/vendor/persist/factory/audio/aw_cali.bin
+    chmod 666 /sys/bus/i2c/drivers/aw8680x_touch/2-005c/touch_callback
+    chown system /sys/bus/i2c/drivers/aw8680x_touch/2-005c/press_threshold
+    chmod 660 /sys/bus/i2c/drivers/aw8680x_touch/2-005c/press_threshold
+    chown system /sys/bus/i2c/drivers/aw8680x_touch/2-005c/bottom_range
+    chown system /sys/bus/i2c/drivers/aw8680x_touch/2-005c/top_range
+    chown system /sys/bus/i2c/drivers/aw8680x_touch/2-005c/ftp_enable
+#Awinic haptic ZUIQ-5009
+    chown audioserver audioserver /dev/awinic_haptic
+    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
+    mkdir /mnt/vendor/persist/haptic 0777 root root
+    #dp switch
+    chown system system /sys/devices/platform/soc/ae90000.qcom,dp_display/prefer_mode
+    chown system system /sys/devices/platform/soc/ae90000.qcom,dp_display/hpd_sim
+    chown system system /sys/devices/platform/soc/ae90000.qcom,dp_display/lanes_count
+    chmod 0666 /sys/devices/platform/soc/ae90000.qcom,dp_display/prefer_mode
+    chmod 0666 /sys/devices/platform/soc/ae90000.qcom,dp_display/hpd_sim
+    chmod 0666 /sys/devices/platform/soc/ae90000.qcom,dp_display/lanes_count
+
+on init
+#added touch gesture wake node permission
+    chown system /sys/devices/virtual/touch/tp_dev/gesture_on
+    chown system /sys/devices/virtual/touch/tp_dev/point
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key1
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key2
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key3
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key4
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key5
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key6
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key7
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key8
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key9
+    chown system /sys/devices/virtual/touch/tp_dev/finger_match
+    chown system /sys/devices/virtual/touch/tp_dev/report_rate
+    chown system /sys/devices/virtual/touch/tp_dev/input_enable
+    chown system /sys/devices/virtual/touch/tp_dev/pad_abs0
+    chown system /sys/devices/virtual/touch/tp_dev/pad_abs1
+    chown system /sys/devices/virtual/touch/tp_dev/pad_key0
+    chown system /sys/devices/virtual/touch/tp_dev/pad_key1
+    chown system /sys/devices/virtual/touch/tp_dev/orientation_mode
+    write /sys/module/firmware_class/parameters/path "/vendor/firmware/aw86917"
+    chmod 666 /sys/devices/virtual/touch/tp_dev/game_mode
+
+on boot
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/double_duration
+    chown system system /sys/class/leds/vibrator/state
+    chown system system /sys/class/leds/vibrator/cali_lra
+    chown system system /sys/class/leds/vibrator/cali
+    chown system system /sys/class/leds/vibrator/dual_cancel
+    chown system system /sys/class/leds/vibrator/trig
+    chmod 666 /sys/class/leds/vibrator/trig
+    chown system system /sys/class/leds/vibrator_aw8697x/cali
+    chown system system /sys/class/leds/vibrator_aw8697x/cali_lra
+    chown system system /sys/class/leds/vibrator_aw8697x/trig
+    chmod 666 /sys/class/leds/vibrator_aw8697x/trig
+    chown system system /sys/class/panel/cellid/read_id
+    chmod 666 /sys/devices/virtual/ftp/ftp_dev/ftp_enable
+    chmod 666 /sys/devices/virtual/ftp/ftp_dev/bottom_range
+    chmod 666 /sys/devices/virtual/ftp/ftp_dev/top_range
+    chmod 666 /sys/devices/virtual/ftp/ftp_dev/press_threshold
+    chown audioserver audioserver /sys/class/leds/vibrator/awrw
+    chown audioserver audioserver /sys/class/leds/vibrator_aw8697x/awrw
+#Awinic haptic
+    chown audioserver audioserver /dev/awinic_haptic
+    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
+    mkdir /mnt/vendor/persist/haptic 0777 root root
+#added touch gesture wake node permission
+    chown system /sys/devices/virtual/touch/tp_dev/gesture_on
+    chown system /sys/devices/virtual/touch/tp_dev/point
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key1
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key2
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key3
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key4
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key5
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key6
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key7
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key8
+    chown system /sys/devices/virtual/touch/tp_dev/touch_key9
+    chown system /sys/devices/virtual/touch/tp_dev/finger_match
+    chown system /sys/devices/virtual/touch/tp_dev/report_rate
+    chown system /sys/devices/virtual/touch/tp_dev/input_enable
+    chown system /sys/devices/virtual/touch/tp_dev/pad_abs0
+    chown system /sys/devices/virtual/touch/tp_dev/pad_abs1
+    chown system /sys/devices/virtual/touch/tp_dev/pad_key0
+    chown system /sys/devices/virtual/touch/tp_dev/pad_key1
+    chown system /sys/devices/virtual/touch/tp_dev/orientation_mode
+    chmod 666 /sys/devices/virtual/touch/tp_dev/game_mode
+#camera
+    chown system camera /dev/dw9781c
+    chmod 666 /dev/dw9781c
+# Use adb shell in user build
+on property:ro.boot.adbon=true
+    setprop persist.sys.zui.dis_adb_auth true
+    setprop persist.sys.usb.config adb
+
+on property:persist.vendor.overlay.zui.tp.chargeronline=1
+    write /sys/class/touch/tp_dev/ft_charger_mode 1
+
+on property:persist.vendor.overlay.zui.tp.chargeronline=0
+    write /sys/class/touch/tp_dev/ft_charger_mode 0
+
+on property:sys.zuidc_switch=1
+    write /sys/class/backlight/panel0-hbm/brightness 19
+
+on property:sys.zuidc_switch=0
+    write /sys/class/backlight/panel0-hbm/brightness 18

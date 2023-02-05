@@ -1,0 +1,2 @@
+persist.sys.usb.config=none
+ro.vendor.qti.va_odm.support=1

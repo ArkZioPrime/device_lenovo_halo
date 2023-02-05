@@ -1,0 +1,341 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "aplog.sh",
+    src: "bin/aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "auto_save_stop_aplog.sh",
+    src: "bin/auto_save_stop_aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "batterylog.sh",
+    src: "bin/batterylog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "batterylogcontrol.sh",
+    src: "bin/batterylogcontrol.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "catch_aplog.sh",
+    src: "bin/catch_aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "copy_aplog.sh",
+    src: "bin/copy_aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "clean_aplog.sh",
+    src: "bin/clean_aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sdio.sh",
+    src: "bin/init.qcom.sdio.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.crda.sh",
+    src: "bin/init.crda.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-cape.sh",
+    src: "bin/init.kernel.post_boot-cape.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-diwali.sh",
+    src: "bin/init.kernel.post_boot-diwali.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-taro.sh",
+    src: "bin/init.kernel.post_boot-taro.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot.sh",
+    src: "bin/init.kernel.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.mdm.sh",
+    src: "bin/init.mdm.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.class_core.sh",
+    src: "bin/init.qcom.class_core.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.coex.sh",
+    src: "bin/init.qcom.coex.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot.sh",
+    src: "bin/init.qcom.early_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.efs.sync.sh",
+    src: "bin/init.qcom.efs.sync.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "bin/init.qcom.sensors.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.usb.sh",
+    src: "bin/init.qcom.usb.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.display_boot.sh",
+    src: "bin/init.qti.display_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.debug-cape.sh",
+    src: "bin/init.qti.kernel.debug-cape.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.debug-diwali.sh",
+    src: "bin/init.qti.kernel.debug-diwali.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.debug-taro.sh",
+    src: "bin/init.qti.kernel.debug-taro.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.debug.sh",
+    src: "bin/init.qti.kernel.debug.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.early_debug-taro.sh",
+    src: "bin/init.qti.kernel.early_debug-taro.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.early_debug.sh",
+    src: "bin/init.qti.kernel.early_debug.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.sh",
+    src: "bin/init.qti.kernel.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.media.sh",
+    src: "bin/init.qti.media.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.qcv.sh",
+    src: "bin/init.qti.qcv.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.touch_boot.sh",
+    src: "bin/init.qti.touch_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.write.sh",
+    src: "bin/init.qti.write.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "kernellog.sh",
+    src: "bin/kernellog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "modemlog.sh",
+    src: "bin/modemlog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "modemlog_setup.sh",
+    src: "bin/modemlog_setup.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "performancelog.sh",
+    src: "bin/performancelog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "qca6234-service.sh",
+    src: "bin/qca6234-service.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "qseelog.sh",
+    src: "bin/qseelog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "smarpa_fac.sh",
+    src: "bin/smarpa_fac.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "stop_aplog.sh",
+    src: "bin/stop_aplog.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "vendor_modprobe.sh",
+    src: "bin/vendor_modprobe.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.lenovo.common.rc",
+    src: "etc/init.lenovo.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.lenovo.kptr.rc",
+    src: "etc/init.lenovo.kptr.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.lenovo.rc",
+    src: "etc/init.lenovo.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.factory.rc",
+    src: "etc/init.qcom.factory.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.usb.rc",
+    src: "etc/init.qcom.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qti.kernel.rc",
+    src: "etc/init.qti.kernel.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qti.ufs.rc",
+    src: "etc/init.qti.ufs.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "etc/init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}
